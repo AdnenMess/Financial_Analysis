@@ -14,6 +14,9 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4
 
+      - name: Check if secret is set
+        run: if [ -z "${{ secrets.AWS_KEY }}" ]; then echo "Secret is not set"; else echo "Secret is set"; fi
+
       - name: Print secret
         run: echo "AWS_KEY=${{ secrets.AWS_KEY }}"
         
