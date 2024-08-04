@@ -10,3 +10,12 @@ jobs:
     steps:
       - name: Print nice message
         run: echo "Hello World"
+
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Print secret
+        run: echo "AWS_KEY=${{ secrets.AWS_KEY }}"
+        
+        
+        
